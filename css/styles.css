@@ -1,0 +1,341 @@
+body {
+    font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #202124;
+    line-height: 1.5;
+}
+
+header {
+    background-color: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 16px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.university-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.logo {
+    height: 60px;
+    object-fit: contain;
+}
+
+.university-info div p {
+    margin: 4px 0;
+    font-size: 14px;
+    color: #5f6368;
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: 500;
+    margin: 0;
+    color: #1a73e8;
+}
+
+#cartButton {
+    background-color: #1a73e8;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#cartButton:hover {
+    background-color: #1765cc;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    flex-wrap: wrap;
+    margin: 16px auto;
+    max-width: 800px;
+}
+
+.filters label {
+    font-size: 14px;
+    color: #5f6368;
+}
+
+.filters select {
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #dadce0;
+    background-color: white;
+    font-size: 14px;
+    color: #202124;
+    min-width: 180px;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    padding: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    width: 280px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.product:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 16px;
+    background-color: white;
+}
+
+.product h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 8px 0;
+    color: #202124;
+}
+
+.product p {
+    font-size: 14px;
+    color: #5f6368;
+    margin: 8px 0;
+    flex-grow: 1;
+}
+
+.product p strong {
+    font-size: 16px;
+    color: #202124;
+}
+
+.product-buttons {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.buy-now {
+    background-color: #1a73e8;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    flex: 1;
+    transition: background-color 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.buy-now:hover {
+    background-color: #1765cc;
+}
+
+.add-to-cart {
+    background-color: #34a853;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    flex: 1;
+    transition: background-color 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.add-to-cart:hover {
+    background-color: #2d9249;
+}
+
+/* Estilos fijos para el carrito */
+#cart {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Inicialmente oculto */
+    width: 300px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow-y: auto;
+}
+
+.cart-visible {
+    right: 0 !important; /* Mostrar el carrito */
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 1px solid #dadce0;
+    background-color: #f8f9fa;
+}
+
+.cart-header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #202124;
+}
+
+.close-cart {
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    color: #5f6368;
+    padding: 0;
+}
+
+.cart-items {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.cart-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    border-bottom: 1px solid #f1f3f4;
+}
+
+.cart-items li div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    border-top: 1px solid #dadce0;
+    font-weight: 500;
+    background-color: #f8f9fa;
+}
+
+#checkout-btn {
+    background-color: #1a73e8;
+    color: white;
+    padding: 12px 16px;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 16px;
+    border-radius: 4px;
+}
+
+.remove-item {
+    background: none;
+    border: none;
+    color: #ea4335;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.remove-item:hover {
+    background-color: #fce8e6;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-8px);
+    }
+    60% {
+        transform: translateY(-4px);
+    }
+}
+
+.bounce {
+    animation: bounce 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fadeIn {
+    animation: fadeIn 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    header {
+        flex-direction: column;
+        padding: 12px;
+    }
+    
+    .university-info {
+        margin-bottom: 12px;
+    }
+    
+    #cartButton {
+        margin-top: 12px;
+    }
+    
+    #cart {
+        width: 100%;
+        right: -100%;
+    }
+}
