@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCC Store - Venta de Celulares</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="university-info">
+            <img src="img/logo-universidad.png" alt="Logo Universidad" class="logo">
+            <div>
+                <p><strong>Nombre:</strong> Nicolas Alejandro Diaz Acosta</p>
+                <p><strong>Programa:</strong> Ingenieria de Software</p>
+                <p><strong>Codigo ID:</strong> 928955</p>
+            </div>
+        </div>
+        <h1>UCC TIENDA</h1>
+        <button id="cartButton">
+            <span class="material-icons"></span>
+            Carrito (<span id="cartCount">0</span>)
+        </button>
+    </header>
+
+    <div class="container">
+        <section class="filters">
+            <div>
+                <label for="brandFilter">Filtrar por marca:</label>
+                <select id="brandFilter">
+                    <option value="all">Todas las marcas</option>
+                    <option value="google">Google Pixel</option>
+                    <option value="samsung">Samsung</option>
+                    <option value="iphone">iPhone</option>
+                    <option value="nothing">Nothing Phone</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="sortOption">Ordenar por:</label>
+                <select id="sortOption">
+                    <option value="price-asc">Precio: Menor a Mayor</option>
+                    <option value="price-desc">Precio: Mayor a Menor</option>
+                    <option value="name-asc">Nombre: A-Z</option>
+                    <option value="name-desc">Nombre: Z-A</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="product-list" id="productList">
+            <!-- Los productos se generan dinámicamente con JS -->
+        </section>
+    </div>
+
+    <div id="cart">
+        <div class="cart-header">
+            <h2>Carrito de compras</h2>
+            <button class="close-cart" id="closeCart">×</button>
+        </div>
+        <ul class="cart-items" id="cartItems">
+            <!-- Items en el carrito generados dinámicamente -->
+        </ul>
+        <div class="cart-total">
+            <span>Total:</span>
+            <span>$<span id="cartTotal">0</span> USD</span>
+        </div>
+        <button id="checkout-btn">Finalizar compra</button>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
